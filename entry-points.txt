@@ -1,0 +1,2 @@
+[console_scripts]
+nagare-create = nagare.admin.create:run

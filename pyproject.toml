@@ -1,0 +1,49 @@
+# --
+# Copyright (c) 2008-2025 Net-ng.
+# All rights reserved.
+#
+# This software is licensed under the BSD License, as described in
+# the file LICENSE.txt, which you should have received as part of
+# this distribution.
+# --
+
+[build-system]
+requires = ['setuptools', 'wheel', 'setuptools_scm']
+build-backend = 'setuptools.build_meta'
+
+[tool.setuptools_scm]
+
+[project]
+name = 'nagare-create'
+dynamic = ['version', 'entry-points', 'scripts']
+description = '`nagare-create` admin command'
+authors = [{ name = 'Net-ng' }, { email = 'contact@net-ng.com' }]
+license = { file = 'LICENSE.txt' }
+requires-python = '>=3.10'
+dependencies = ['nagare-commands-create']
+[project.readme]
+file = 'README.rst'
+content-type = 'text/x-rst'
+
+[tool.setuptools.dynamic]
+entry-points = { file = 'entry-points.txt' }
+
+[project.optional-dependencies]
+dev = ['sphinx', 'sphinx_rtd_theme', 'pre-commit', 'ruff', 'pytest', 'twine']
+
+[project.urls]
+Homepage = 'https://nagare.org'
+Documentation = 'https://nagare.org/doc'
+Source = 'https://github.com/nagareproject/commands-create'
+Tracker = 'https://github.com/nagareproject/commands-create/issues'
+
+[tool.ruff]
+src = ['src']
+line-length = 120
+format.quote-style = 'single'
+
+[tool.ruff.lint]
+ignore = ['COM812', 'D10', 'S603', 'ISC001']
+isort.length-sort = true
+pydocstyle.convention = 'google'
+flake8-quotes.inline-quotes = 'single'
