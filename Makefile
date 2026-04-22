@@ -2,8 +2,6 @@
 
 clean:
 	@rm -rf build dist
-	@rm -rf src/*.egg-info
-	@find src \( -name '*.py[co]' -o -name '__pycache__' \) -delete
 	@rm -rf doc/_build/*
 
 install-dev: clean
